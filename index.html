@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Grammar Course | Units 53-68</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'float': 'float 8s ease-in-out infinite',
+                        'float-delayed': 'float 12s ease-in-out infinite reverse',
+                        'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0) translateX(0)' },
+                            '50%': { transform: 'translateY(-20px) translateX(10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1); 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(118, 75, 162, 0.5); 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(118, 75, 162, 0.8); 
+        }
+    </style>
+</head>
+<body class="bg-slate-100 min-h-screen relative text-gray-800">
+
+    <!-- Moving Background Elements -->
+    <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+        <!-- Gradient Background -->
+        <div class="absolute inset-0 bg-gradient-to-br from-indigo-100 via-purple-100 to-pink-100"></div>
+        
+        <!-- Animated Blobs -->
+        <div class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-float"></div>
+        <div class="absolute top-[-10%] right-[-10%] w-96 h-96 bg-yellow-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-float-delayed"></div>
+        <div class="absolute bottom-[-10%] left-[20%] w-96 h-96 bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-float"></div>
+        <div class="absolute bottom-[10%] right-[-5%] w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-float-delayed"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 glass-panel shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center cursor-pointer" onclick="app.renderDashboard()">
+                    <i class="fas fa-graduation-cap text-2xl text-purple-600 mr-2"></i>
+                    <span class="font-bold text-xl tracking-tight gradient-text">GrammarMastery</span>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <button onclick="app.renderDashboard()" class="text-gray-600 hover:text-purple-600 transition-colors font-medium">Modules</button>
+                    <button onclick="alert('Progress tracking coming soon!')" class="text-gray-600 hover:text-purple-600 transition-colors font-medium">My Progress</button>
+                    <div class="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm font-semibold">Intermediate</div>
+                </div>
+                <div class="md:hidden">
+                    <!-- Mobile menu button placeholder -->
+                    <button class="text-gray-600"><i class="fas fa-bars text-xl"></i></button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main id="app-root" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 transition-all duration-300">
+        <!-- Dynamic content will be injected here -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="glass-panel mt-12 py-6">
+        <div class="max-w-7xl mx-auto px-4 text-center text-gray-500 text-sm">
+            <p>&copy; 2024 GrammarMastery. Based on standard intermediate grammar modules.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        // Data derived from the PDF content analysis (Units 53-68)
+        const grammarModules = [
+            {
+                id: 53,
+                title: "Verb + -ing",
+                subtitle: "enjoy, mind, stop, etc.",
+                explanation: `
+                    <p class="mb-2">Some verbs are followed by <strong>-ing</strong> (gerund), not the infinitive.</p>
+                    <ul class="list-disc pl-5 space-y-1 mb-4 text-gray-700">
+                        <li><strong>enjoy</strong>: I enjoy <em>reading</em>. (NOT enjoy to read)</li>
+                        <li><strong>mind</strong>: Would you mind <em>closing</em> the door?</li>
+                        <li><strong>suggest</strong>: Chris suggested <em>going</em> to the cinema.</li>
+                        <li><strong>stop</strong>: Suddenly everybody stopped <em>talking</em>.</li>
+                    </ul>
+                    <p class="mb-2"><strong>Common verbs taking -ing:</strong> finish, postpone, consider, admit, deny, avoid, risk, imagine, fancy.</p>
+                    <div class="bg-blue-50 border-l-4 border-blue-400 p-3 mt-3 text-sm">
+                        <strong>Negative:</strong> The negative form is <em>not -ing</em>.<br>
+                        Example: When I'm on holiday, I enjoy <em>not having</em> to get up early.
+                    </div>
+                `,
+                questions: [
+                    { q: "He tried to avoid ______ (answer) my question.", a: "answering", type: "text" },
+                    { q: "I enjoy ______ (listen) to music.", a: "listening", type: "text" },
+                    { q: "Have you finished ______ (read) the newspaper?", a: "reading", type: "text" },
+                    { q: "I don't fancy ______ (go) out tonight.", a: "going", type: "text" },
+                    { q: "She suggested ______ (have) lunch.", a: "having", type: "text" },
+                    { q: "He denied ______ (steal) the car.", a: "stealing", type: "text" },
+                    { q: "Would you consider ______ (move) to a new city?", a: "moving", type: "text" },
+                    { q: "They risked ______ (lose) everything.", a: "losing", type: "text" },
+                    { q: "I can't imagine ______ (live) anywhere else.", a: "living", type: "text" },
+                    { q: "Please stop ______ (make) so much noise.", a: "making", type: "text" }
+                ]
+            },
+            {
+                id: 54,
+                title: "Verb + to ...",
+                subtitle: "decide, forget, hope, etc.",
+                explanation: `
+                    <p class="mb-2">Some verbs are followed by <strong>to ...</strong> (infinitive).</p>
+                    <ul class="list-disc pl-5 space-y-1 mb-4 text-gray-700">
+                        <li><strong>decide</strong>: We decided <em>to take</em> a taxi.</li>
+                        <li><strong>forget</strong>: Don't forget <em>to lock</em> the door.</li>
+                        <li><strong>offer</strong>: He offered <em>to carry</em> my bag.</li>
+                        <li><strong>promise</strong>: I promised <em>not to be</em> late.</li>
+                    </ul>
+                    <p class="mb-2"><strong>Other verbs:</strong> agree, plan, manage, afford, threaten, refuse, arrange, fail, learn.</p>
+                `,
+                questions: [
+                    { q: "It was late, so we decided ______ (take) a taxi.", a: "to take", type: "text" },
+                    { q: "Simon was in a difficult situation, so I agreed ______ (help) him.", a: "to help", type: "text" },
+                    { q: "I waved to Karen but failed ______ (attract) her attention.", a: "to attract", type: "text" },
+                    { q: "He offered ______ (carry) my bag.", a: "to carry", type: "text" },
+                    { q: "We planned ______ (go) to France.", a: "to go", type: "text" },
+                    { q: "I can't afford ______ (buy) a new car.", a: "to buy", type: "text" },
+                    { q: "She refused ______ (speak) to him.", a: "to speak", type: "text" },
+                    { q: "They arranged ______ (meet) at 10.", a: "to meet", type: "text" },
+                    { q: "He threatened ______ (call) the police.", a: "to call", type: "text" },
+                    { q: "Don't forget ______ (lock) the door.", a: "to lock", type: "text" }
+                ]
+            },
+            {
+                id: 55,
+                title: "Verb (+ object) + to ...",
+                subtitle: "want, ask, tell, etc.",
+                explanation: `
+                    <p class="mb-2">Some verbs have the structure: <strong>Verb + Object + to ...</strong></p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div class="bg-white p-3 rounded shadow-sm">
+                            <h4 class="font-bold text-purple-600 mb-1">Pattern A: Verb + to...</h4>
+                            <p>I want <em>to go</em>.</p>
+                            <p>We expected <em>to be</em> late.</p>
+                        </div>
+                        <div class="bg-white p-3 rounded shadow-sm">
+                            <h4 class="font-bold text-purple-600 mb-1">Pattern B: Verb + Object + to...</h4>
+                            <p>I want <strong>you</strong> <em>to go</em>.</p>
+                            <p>We expected <strong>Dan</strong> <em>to be</em> late.</p>
+                        </div>
+                    </div>
+                    <p class="mb-2"><strong>Verbs usually with object + to:</strong> tell, order, remind, warn, force, invite, persuade, teach.</p>
+                    <p class="text-sm italic text-gray-500">Note: 'Suggest' does NOT follow this pattern. We say "suggested that I ask", NOT "suggested me to ask".</p>
+                `,
+                questions: [
+                    { q: "Can you remind me ______ (call) Sam tomorrow?", a: "to call", type: "text" },
+                    { q: "Who taught you ______ (drive)?", a: "to drive", type: "text" },
+                    { q: "I didn't move the piano alone. I got somebody ______ (help) me.", a: "to help", type: "text" },
+                    { q: "I expect him ______ (arrive) soon.", a: "to arrive", type: "text" },
+                    { q: "She warned me ______ (not / touch) the wire.", a: "not to touch", type: "text" },
+                    { q: "They invited us ______ (stay) with them.", a: "to stay", type: "text" },
+                    { q: "He persuaded me ______ (apply) for the job.", a: "to apply", type: "text" },
+                    { q: "I told you ______ (wait) here.", a: "to wait", type: "text" },
+                    { q: "She forced him ______ (tell) the truth.", a: "to tell", type: "text" },
+                    { q: "I would like you ______ (come) with me.", a: "to come", type: "text" }
+                ]
+            },
+            {
+                id: 56,
+                title: "Verb + -ing or to ... (1)",
+                subtitle: "remember, regret, etc.",
+                explanation: `
+                    <p class="mb-2">Some verbs can be followed by <strong>-ing</strong> or <strong>to...</strong> with a difference in meaning.</p>
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-indigo-400 pl-3">
+                            <h4 class="font-bold">Remember</h4>
+                            <p><strong>Remember doing:</strong> Recall a memory (past).</p>
+                            <p class="text-sm text-gray-600">"I remember locking the door." (I have a memory of doing it)</p>
+                            <p class="mt-1"><strong>Remember to do:</strong> Don't forget to perform a task (future/action).</p>
+                            <p class="text-sm text-gray-600">"Remember to lock the door." (Don't forget)</p>
+                        </div>
+                        <div class="border-l-4 border-pink-400 pl-3">
+                            <h4 class="font-bold">Regret</h4>
+                            <p><strong>Regret doing:</strong> Feel sorry about something you did.</p>
+                            <p class="text-sm text-gray-600">"I regret saying that."</p>
+                            <p class="mt-1"><strong>Regret to say/tell/inform:</strong> Sorry to give bad news.</p>
+                            <p class="text-sm text-gray-600">"We regret to inform you that you failed."</p>
+                        </div>
+                    </div>
+                `,
+                questions: [
+                    { q: "I remember ______ (lock) the door, but I can't find the key now.", a: "locking", type: "text" },
+                    { q: "Please remember ______ (post) the letter.", a: "to post", type: "text" },
+                    { q: "I now regret ______ (say) what I said.", a: "saying", type: "text" },
+                    { q: "I regret ______ (inform) you that the train is delayed.", a: "to inform", type: "text" },
+                    { q: "He went on ______ (talk) about his illness for hours.", a: "talking", type: "text" },
+                    { q: "After passing the exam, she went on ______ (become) a lawyer.", a: "to become", type: "text" },
+                    { q: "I remember ______ (see) him at the party last year.", a: "seeing", type: "text" },
+                    { q: "Did you remember ______ (buy) milk?", a: "to buy", type: "text" },
+                    { q: "I regret ______ (spend) all my money.", a: "spending", type: "text" },
+                    { q: "Please remember ______ (switch) off the lights.", a: "to switch", type: "text" }
+                ]
+            },
+            {
+                id: 57,
+                title: "Verb + -ing or to ... (2)",
+                subtitle: "try, need, help",
+                explanation: `
+                    <p class="mb-2"><strong>Try to do:</strong> Attempt to do something difficult.</p>
+                    <p class="text-sm mb-2">"I tried to keep my eyes open, but I was too tired."</p>
+                    <p class="mb-2"><strong>Try doing:</strong> Do something as an experiment/test.</p>
+                    <p class="text-sm mb-4">"The photocopier isn't working. Try pressing the green button."</p>
+                    <hr class="my-3 border-gray-200">
+                    <p class="mb-2"><strong>Need to do:</strong> It is necessary for me to do it.</p>
+                    <p class="mb-2"><strong>Need doing:</strong> It needs to be done (Passive meaning).</p>
+                    <p class="text-sm">"My phone needs charging." (= needs to be charged)</p>
+                `,
+                questions: [
+                    { q: "I was very tired. I tried ______ (keep) my eyes open.", a: "to keep", type: "text" },
+                    { q: "The room isn't very nice. It needs ______ (paint).", a: "painting", type: "text" },
+                    { q: "I need ______ (take) more exercise.", a: "to take", type: "text" },
+                    { q: "The window needs ______ (clean).", a: "cleaning", type: "text" },
+                    { q: "Try ______ (press) the button to restart the computer.", a: "pressing", type: "text" },
+                    { q: "I tried ______ (reach) the shelf, but I was too short.", a: "to reach", type: "text" },
+                    { q: "You need ______ (work) harder.", a: "to work", type: "text" },
+                    { q: "My car needs ______ (repair).", a: "repairing", type: "text" },
+                    { q: "He helped me ______ (move) the furniture.", a: "to move", type: "text" },
+                    { q: "I can't help ______ (laugh) when I see him.", a: "laughing", type: "text" }
+                ]
+            },
+            {
+                id: 58,
+                title: "Verb + -ing or to ... (3)",
+                subtitle: "like, would like",
+                explanation: `
+                    <p class="mb-2"><strong>Like / Love / Hate doing</strong> vs <strong>to do</strong>:</p>
+                    <p class="mb-2">Often both are possible. "I like playing tennis" / "I like to play tennis."</p>
+                    <p class="mb-4 text-sm text-gray-600">In British English, "like doing" is more common for enjoyment. "Like to do" often implies it's a good habit (e.g., "I like to clean the kitchen").</p>
+                    
+                    <div class="bg-yellow-50 p-3 rounded border border-yellow-200">
+                        <h4 class="font-bold text-yellow-800">Would like / Would love</h4>
+                        <p class="text-sm">ALWAYS followed by <strong>to ...</strong></p>
+                        <p class="text-sm italic">"I'd like to go away." (NOT 'I'd like going')</p>
+                    </div>
+                `,
+                questions: [
+                    { q: "I enjoy ______ (clean) the kitchen.", a: "cleaning", type: "text" },
+                    { q: "I'd like ______ (go) away for a few days.", a: "to go", type: "text" },
+                    { q: "Would you like ______ (come) to dinner on Friday?", a: "to come", type: "text" },
+                    { q: "I like ______ (get) up early.", a: "to get", type: "text" },
+                    { q: "I like ______ (swim) in the sea.", a: "swimming", type: "text" },
+                    { q: "I would love ______ (meet) your family.", a: "to meet", type: "text" },
+                    { q: "She hates ______ (fly).", a: "flying", type: "text" },
+                    { q: "I would hate ______ (be) late.", a: "to be", type: "text" },
+                    { q: "Do you like ______ (cook)?", a: "cooking", type: "text" },
+                    { q: "I'd like ______ (have) a look at your house.", a: "to have", type: "text" }
+                ]
+            },
+            {
+                id: 59,
+                title: "Prefer and Would Rather",
+                subtitle: "expressing preferences",
+                explanation: `
+                    <p class="mb-2"><strong>Prefer:</strong></p>
+                    <ul class="list-disc pl-5 mb-3 text-sm">
+                        <li>I prefer tea <strong>to</strong> coffee.</li>
+                        <li>I prefer driving <strong>to</strong> travelling by train.</li>
+                        <li>I prefer <strong>to drive</strong> rather than travel by train.</li>
+                    </ul>
+                    <p class="mb-2"><strong>Would rather (do):</strong></p>
+                    <p class="text-sm mb-2">Structure: Would rather + infinitive without 'to'.</p>
+                    <ul class="list-disc pl-5 text-sm">
+                        <li>"I'd rather drive."</li>
+                        <li>"I'd rather stay at home than go to the cinema."</li>
+                    </ul>
+                `,
+                questions: [
+                    { q: "I prefer driving to ______ (travel) by train.", a: "travelling", type: "text" },
+                    { q: "I'd rather ______ (drive) than go by train.", a: "drive", type: "text" },
+                    { q: "I prefer to drive rather than ______ (travel) by train.", a: "travel", type: "text" },
+                    { q: "I prefer tea ______ coffee.", a: "to", type: "text" },
+                    { q: "I'd rather ______ (stay) home tonight.", a: "stay", type: "text" },
+                    { q: "She prefers ______ (walk) to driving.", a: "walking", type: "text" },
+                    { q: "I prefer to live in the country rather than ______ (live) in the city.", a: "live", type: "text" },
+                    { q: "Do you prefer ______ (read) or watching TV?", a: "reading", type: "text" },
+                    { q: "I'd rather ______ (not / go) out this evening.", a: "not go", type: "text" },
+                    { q: "She would rather ______ (wait) for the bus.", a: "wait", type: "text" }
+                ]
+            },
+            {
+                id: 60,
+                title: "Preposition + -ing",
+                subtitle: "in, for, about, etc.",
+                explanation: `
+                    <p class="mb-4">If a preposition (in, for, about, with, of, etc.) is followed by a verb, the verb ends in <strong>-ing</strong>.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                        <p>Are you interested <strong>in</strong> working for us?</p>
+                        <p>I'm not good <strong>at</strong> learning languages.</p>
+                        <p>Fed up <strong>with</strong> studying.</p>
+                        <p>Advantages <strong>of</strong> having a car.</p>
+                        <p>Thanks <strong>for</strong> helping me.</p>
+                        <p>How <strong>about</strong> meeting for lunch?</p>
+                    </div>
+                `,
+                questions: [
+                    { q: "Are you interested in ______ (work) for us?", a: "working", type: "text" },
+                    { q: "I'm not good at ______ (learn) languages.", a: "learning", type: "text" },
+                    { q: "How about ______ (meet) for lunch tomorrow?", a: "meeting", type: "text" },
+                    { q: "He left without ______ (say) goodbye.", a: "saying", type: "text" },
+                    { q: "She is fed up with ______ (wait).", a: "waiting", type: "text" },
+                    { q: "What are the advantages of ______ (have) a car?", a: "having", type: "text" },
+                    { q: "Thank you for ______ (come).", a: "coming", type: "text" },
+                    { q: "Instead of ______ (go) out, let's watch a movie.", a: "going", type: "text" },
+                    { q: "He went to work in spite of ______ (feel) ill.", a: "feeling", type: "text" },
+                    { q: "Are you worried about ______ (lose) your job?", a: "losing", type: "text" }
+                ]
+            },
+            {
+                id: 61,
+                title: "Be/Get Used To",
+                subtitle: "accustomed to",
+                explanation: `
+                    <p class="mb-2"><strong>Be used to doing something:</strong> It is not new or strange for you.</p>
+                    <p class="text-sm italic mb-2">"I'm used to driving on the left." (I am accustomed to it)</p>
+                    
+                    <p class="mb-2"><strong>Get used to doing something:</strong> The process of becoming accustomed.</p>
+                    <p class="text-sm italic mb-4">"I'm getting used to the noise."</p>
+
+                    <div class="bg-red-50 p-3 rounded border border-red-200">
+                        <strong>Warning:</strong> Do not confuse with "I used to do" (past habit).
+                        <ul class="list-disc pl-5 text-sm mt-1">
+                            <li>I used to drive. (Past habit)</li>
+                            <li>I am used to driv<strong>ing</strong>. (Accustomed to)</li>
+                        </ul>
+                    </div>
+                `,
+                questions: [
+                    { q: "She has to get up early. She isn't used to ______ (get) up so early.", a: "getting", type: "text" },
+                    { q: "I'm used to ______ (live) alone.", a: "living", type: "text" },
+                    { q: "He used to ______ (drive) to work, but now he walks.", a: "drive", type: "text" },
+                    { q: "I can't get used to ______ (get) up so early.", a: "getting", type: "text" },
+                    { q: "She is used to ______ (work) hard.", a: "working", type: "text" },
+                    { q: "Eventually, you will get used to ______ (live) here.", a: "living", type: "text" },
+                    { q: "He isn't used to ______ (drive) on the left.", a: "driving", type: "text" },
+                    { q: "They are used to ______ (sleep) through the noise.", a: "sleeping", type: "text" },
+                    { q: "I used to ______ (play) football, but I stopped.", a: "play", type: "text" },
+                    { q: "Have you got used to ______ (use) the new software?", a: "using", type: "text" }
+                ]
+            },
+            {
+                id: 62,
+                title: "Verb + Preposition + -ing",
+                subtitle: "succeed in, accuse of, etc.",
+                explanation: `
+                    <p class="mb-2">Structure: <strong>Verb + Preposition + -ing object</strong>.</p>
+                    <div class="grid grid-cols-2 gap-2 text-sm mb-4">
+                        <div>approve <strong>of</strong></div>
+                        <div>decide <strong>against</strong></div>
+                        <div>dream <strong>of</strong></div>
+                        <div>feel <strong>like</strong></div>
+                        <div>insist <strong>on</strong></div>
+                        <div>look forward <strong>to</strong></div>
+                        <div>succeed <strong>in</strong></div>
+                        <div>think <strong>of/about</strong></div>
+                    </div>
+                    <p class="mb-2"><strong>Structure: Verb + Object + Preposition + -ing</strong></p>
+                    <p class="text-sm">"They accused <em>us</em> <strong>of</strong> telling lies."</p>
+                    <p class="text-sm">"Congratulate <em>someone</em> <strong>on</strong> winning."</p>
+                `,
+                questions: [
+                    { q: "He doesn't approve of ______ (swear).", a: "swearing", type: "text" },
+                    { q: "I'm looking forward to ______ (meet) her.", a: "meeting", type: "text" },
+                    { q: "They accused us of ______ (tell) lies.", a: "telling", type: "text" },
+                    { q: "She insisted on ______ (pay) for dinner.", a: "paying", type: "text" },
+                    { q: "I'm thinking of ______ (buy) a house.", a: "buying", type: "text" },
+                    { q: "We decided against ______ (move) to London.", a: "moving", type: "text" },
+                    { q: "He succeeded in ______ (find) a job.", a: "finding", type: "text" },
+                    { q: "I feel like ______ (go) for a swim.", a: "going", type: "text" },
+                    { q: "They congratulated him on ______ (pass) his exams.", a: "passing", type: "text" },
+                    { q: "The rain prevented us from ______ (go) out.", a: "going", type: "text" }
+                ]
+            },
+            {
+                id: 63,
+                title: "Expressions + -ing",
+                subtitle: "it's no use, worth, etc.",
+                explanation: `
+                    <p class="mb-2">Common expressions followed by <strong>-ing</strong>:</p>
+                    <ul class="list-disc pl-5 space-y-2 text-sm text-gray-700">
+                        <li><strong>It's no use / It's no good:</strong> "It's no use worrying."</li>
+                        <li><strong>There's no point in:</strong> "There's no point in buying a car if you don't drive."</li>
+                        <li><strong>It's (not) worth:</strong> "It's worth seeing the film."</li>
+                        <li><strong>Have difficulty/trouble:</strong> "I had difficulty finding a place to live."</li>
+                        <li><strong>Spend/Waste time:</strong> "He spent hours trying to repair the clock."</li>
+                        <li><strong>Go -ing (activities):</strong> Go swimming, go shopping, go skiing.</li>
+                    </ul>
+                `,
+                questions: [
+                    { q: "It's no use ______ (worry) about it.", a: "worrying", type: "text" },
+                    { q: "The film was very good. It's worth ______ (see).", a: "seeing", type: "text" },
+                    { q: "I had difficulty ______ (find) a place to live.", a: "finding", type: "text" },
+                    { q: "It's no good ______ (try) to persuade me.", a: "trying", type: "text" },
+                    { q: "There's no point in ______ (wait) any longer.", a: "waiting", type: "text" },
+                    { q: "This book is worth ______ (read).", a: "reading", type: "text" },
+                    { q: "I spent hours ______ (repair) the bike.", a: "repairing", type: "text" },
+                    { q: "She has trouble ______ (remember) names.", a: "remembering", type: "text" },
+                    { q: "Do you go ______ (ski) in the winter?", a: "skiing", type: "text" },
+                    { q: "Stop wasting time ______ (play) games.", a: "playing", type: "text" }
+                ]
+            },
+            {
+                id: 64,
+                title: "To ..., For ... and So That",
+                subtitle: "expressing purpose",
+                explanation: `
+                    <p class="mb-2"><strong>To ... (infinitive):</strong> To say <em>why</em> somebody does something.</p>
+                    <p class="text-sm mb-2">"I went out <strong>to buy</strong> milk."</p>
+                    
+                    <p class="mb-2"><strong>For + Noun:</strong></p>
+                    <p class="text-sm mb-2">"I went out <strong>for</strong> some milk."</p>
+                    
+                    <p class="mb-2"><strong>So that:</strong> Used when the purpose is negative or involves 'can/could'.</p>
+                    <p class="text-sm">"I hurried <strong>so that</strong> I wouldn't be late."</p>
+                `,
+                questions: [
+                    { q: "I went out ______ (buy) some bread.", a: "to buy", type: "text" },
+                    { q: "We stopped ______ (petrol).", a: "for petrol", type: "text" },
+                    { q: "I hurried ______ I wouldn't be late.", a: "so that", type: "text" },
+                    { q: "I went to the shop ______ (get) some milk.", a: "to get", type: "text" },
+                    { q: "We went to a restaurant ______ (lunch).", a: "for lunch", type: "text" },
+                    { q: "I wore warm clothes so that I ______ (not / be) cold.", a: "wouldn't be", type: "text" },
+                    { q: "He saved money ______ (buy) a car.", a: "to buy", type: "text" },
+                    { q: "This knife is ______ (cut) bread.", a: "for cutting", type: "text" },
+                    { q: "She is learning English so that she ______ (can) study in the US.", a: "can", type: "text" },
+                    { q: "I moved to London ______ (find) a job.", a: "to find", type: "text" }
+                ]
+            },
+            {
+                id: 65,
+                title: "Adjective + to ...",
+                subtitle: "difficult to, nice of, etc.",
+                explanation: `
+                    <p class="mb-2"><strong>(It is) Difficult / Easy / Impossible / Dangerous + to ...</strong></p>
+                    <p class="text-sm mb-2">"It is difficult <strong>to understand</strong> him." OR "He is difficult <strong>to understand</strong>."</p>
+                    
+                    <p class="mb-2"><strong>(It is) Nice / Kind / Silly + of someone + to ...</strong></p>
+                    <p class="text-sm mb-2">"It was nice <strong>of you to help</strong> me."</p>
+                    
+                    <p class="mb-2"><strong>I am Sorry / Surprised / Glad + to ...</strong></p>
+                    <p class="text-sm">"I was surprised <strong>to see</strong> you."</p>
+                `,
+                questions: [
+                    { q: "It is difficult ______ (understand) him.", a: "to understand", type: "text" },
+                    { q: "It was nice of you ______ (help) me.", a: "to help", type: "text" },
+                    { q: "I was surprised ______ (see) you.", a: "to see", type: "text" },
+                    { q: "It is dangerous ______ (walk) here at night.", a: "to walk", type: "text" },
+                    { q: "It was careless of him ______ (leave) the door unlocked.", a: "to leave", type: "text" },
+                    { q: "I was glad ______ (hear) the news.", a: "to hear", type: "text" },
+                    { q: "She was disappointed ______ (miss) the concert.", a: "to miss", type: "text" },
+                    { q: "It is impossible ______ (solve) this problem.", a: "to solve", type: "text" },
+                    { q: "It was kind of you ______ (invite) us.", a: "to invite", type: "text" },
+                    { q: "I am sorry ______ (disturb) you.", a: "to disturb", type: "text" }
+                ]
+            },
+            {
+                id: 66,
+                title: "To ... and Preposition + -ing",
+                subtitle: "afraid to vs afraid of",
+                explanation: `
+                    <p class="mb-2"><strong>Afraid to do:</strong> You don't want to do it because it is dangerous or the result could be bad (intentional).</p>
+                    <p class="text-sm italic mb-2">"I was afraid to go near the dog."</p>
+                    
+                    <p class="mb-2"><strong>Afraid of -ing:</strong> Possibility of something bad happening (unintentional result).</p>
+                    <p class="text-sm italic mb-4">"I was afraid of being bitten."</p>
+                    
+                    <p class="mb-2"><strong>Interested in -ing:</strong> Thinking of doing it / would like to do it.</p>
+                    <p class="mb-2"><strong>Interested to do:</strong> Reaction to hearing/seeing something.</p>
+                    <p class="text-sm italic">"I was interested to hear that..."</p>
+                `,
+                questions: [
+                    { q: "I was afraid ______ (go) near the dog.", a: "to go", type: "text" },
+                    { q: "I was afraid of ______ (bite).", a: "being bitten", type: "text" },
+                    { q: "I am interested ______ (join) the club.", a: "in joining", type: "text" },
+                    { q: "I was interested ______ (read) your letter.", a: "to read", type: "text" },
+                    { q: "He is interested ______ (history).", a: "in history", type: "text" },
+                    { q: "I am sorry ______ (shout) at you yesterday.", a: "for shouting", type: "text" },
+                    { q: "I was sorry ______ (hear) that you were ill.", a: "to hear", type: "text" },
+                    { q: "She was afraid ______ (tell) him the truth.", a: "to tell", type: "text" },
+                    { q: "They were afraid of ______ (lose) the match.", a: "losing", type: "text" },
+                    { q: "I'm thinking of ______ (change) my job.", a: "changing", type: "text" }
+                ]
+            },
+            {
+                id: 67,
+                title: "See somebody do vs doing",
+                subtitle: "perception verbs",
+                explanation: `
+                    <p class="mb-2"><strong>See somebody do (infinitive without to):</strong> You saw the <em>complete</em> action.</p>
+                    <p class="text-sm italic mb-2">"I saw him <strong>fall</strong> off the wall." (I saw the whole fall)</p>
+                    
+                    <p class="mb-2"><strong>See somebody doing (-ing):</strong> You saw the action <em>in progress</em> (part of it).</p>
+                    <p class="text-sm italic mb-2">"I saw him <strong>walking</strong> along the street." (I saw him while he was walking)</p>
+                    
+                    <p class="text-sm text-gray-600">This applies to: see, hear, smell, feel, listen to, notice, watch.</p>
+                `,
+                questions: [
+                    { q: "I saw him ______ (fall) off the wall. (The whole action)", a: "fall", type: "text" },
+                    { q: "I saw him ______ (walk) along the street. (In progress)", a: "walking", type: "text" },
+                    { q: "I didn't hear you ______ (come) in.", a: "come", type: "text" },
+                    { q: "I heard the bomb ______ (explode).", a: "explode", type: "text" },
+                    { q: "I heard someone ______ (sing) in the shower.", a: "singing", type: "text" },
+                    { q: "Did you notice anyone ______ (go) out?", a: "go", type: "text" },
+                    { q: "I can smell something ______ (burn).", a: "burning", type: "text" },
+                    { q: "We watched them ______ (play) football. (Whole game)", a: "play", type: "text" },
+                    { q: "I found him ______ (sit) under a tree.", a: "sitting", type: "text" },
+                    { q: "Listen to the birds ______ (sing).", a: "singing", type: "text" }
+                ]
+            },
+            {
+                id: 68,
+                title: "-ing clauses",
+                subtitle: "Feeling tired, I went to bed",
+                explanation: `
+                    <p class="mb-2">An <strong>-ing clause</strong> can explain <em>when</em> or <em>why</em> something happened.</p>
+                    <p class="mb-2"><strong>Simultaneous actions:</strong> "Joe hurt his knee <strong>playing</strong> football." (While playing)</p>
+                    <p class="mb-2"><strong>Reasons:</strong> "<strong>Feeling</strong> tired, I went to bed early." (Because I felt tired)</p>
+                    <p class="mb-2"><strong>Sequence (Having done):</strong> "<strong>Having found</strong> a hotel, we looked for dinner." (After finding)</p>
+                `,
+                questions: [
+                    { q: "Joe hurt his knee ______ (play) football.", a: "playing", type: "text" },
+                    { q: "______ (feel) tired, I went to bed early.", a: "Feeling", type: "text" },
+                    { q: "______ (finish) her work, she went home.", a: "Having finished", type: "text" },
+                    { q: "______ (walk) down the street, I met an old friend.", a: "Walking", type: "text" },
+                    { q: "______ (not / have) a car, she finds it difficult to get around.", a: "Not having", type: "text" },
+                    { q: "______ (buy) the tickets, we went into the cinema.", a: "Having bought", type: "text" },
+                    { q: "Be careful when ______ (cross) the road.", a: "crossing", type: "text" },
+                    { q: "He injured his leg ______ (play) tennis.", a: "playing", type: "text" },
+                    { q: "______ (be) a vegetarian, he doesn't eat meat.", a: "Being", type: "text" },
+                    { q: "______ (see) the film twice, I didn't want to see it again.", a: "Having seen", type: "text" }
+                ]
+            }
+        ];
+
+        const app = {
+            currentView: 'dashboard',
+            
+            init() {
+                this.renderDashboard();
+            },
+
+            renderDashboard() {
+                this.currentView = 'dashboard';
+                const root = document.getElementById('app-root');
+                
+                const gridHtml = grammarModules.map(module => `
+                    <div onclick="app.renderUnit(${module.id})" 
+                         class="glass-panel rounded-2xl p-6 cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="bg-purple-100 text-purple-700 text-xs font-bold px-2 py-1 rounded">Unit ${module.id}</span>
+                            <i class="fas fa-chevron-right text-gray-300 group-hover:text-purple-500 transition-colors"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-1 group-hover:text-purple-700 transition-colors">${module.title}</h3>
+                        <p class="text-sm text-gray-500">${module.subtitle}</p>
+                        <div class="mt-4 w-full bg-gray-200 rounded-full h-1.5">
+                            <div class="bg-gradient-to-r from-purple-500 to-pink-500 h-1.5 rounded-full" style="width: 0%"></div>
+                        </div>
+                    </div>
+                `).join('');
+
+                root.innerHTML = `
+                    <div class="mb-8 text-center animate-fade-in">
+                        <h1 class="text-4xl font-bold text-gray-900 mb-2">Grammar Modules</h1>
+                        <p class="text-gray-600">Select a unit to study and practice.</p>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in-up">
+                        ${gridHtml}
+                    </div>
+                `;
+            },
+
+            renderUnit(id) {
+                const module = grammarModules.find(m => m.id === id);
+                if (!module) return;
+                
+                const root = document.getElementById('app-root');
+                
+                // Navigation buttons
+                const prevBtn = id > 53 ? `<button onclick="app.renderUnit(${id - 1})" class="flex items-center text-gray-600 hover:text-purple-600 font-medium transition-colors"><i class="fas fa-arrow-left mr-2"></i> Previous</button>` : '<div></div>';
+                const nextBtn = id < 68 ? `<button onclick="app.renderUnit(${id + 1})" class="flex items-center text-gray-600 hover:text-purple-600 font-medium transition-colors">Next <i class="fas fa-arrow-right ml-2"></i></button>` : '<div></div>';
+
+                root.innerHTML = `
+                    <div class="animate-fade-in">
+                        <!-- Breadcrumbs & Nav -->
+                        <div class="flex justify-between items-center mb-6">
+                            ${prevBtn}
+                            <button onclick="app.renderDashboard()" class="text-sm bg-white px-4 py-2 rounded-full shadow-sm text-gray-600 hover:text-purple-600 transition-colors">
+                                <i class="fas fa-th-large mr-2"></i> Dashboard
+                            </button>
+                            ${nextBtn}
+                        </div>
+
+                        <!-- Content Grid -->
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                            
+                            <!-- Explanation Panel -->
+                            <div class="lg:col-span-2 space-y-6">
+                                <div class="glass-panel rounded-3xl p-8 shadow-sm">
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <span class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-sm font-bold px-3 py-1 rounded-full">Unit ${module.id}</span>
+                                        <h2 class="text-3xl font-bold text-gray-800">${module.title}</h2>
+                                    </div>
+                                    <div class="prose prose-purple max-w-none text-gray-600">
+                                        ${module.explanation}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Interactive Activity Panel -->
+                            <div class="lg:col-span-1">
+                                <div class="bg-white rounded-3xl p-6 shadow-lg border border-purple-100 sticky top-24">
+                                    <div class="flex items-center justify-between mb-6">
+                                        <h3 class="text-xl font-bold text-gray-800"><i class="fas fa-pencil-alt text-purple-500 mr-2"></i>Practice</h3>
+                                        <span class="text-xs font-semibold text-gray-400">QUIZ</span>
+                                    </div>
+                                    
+                                    <div id="quiz-container" class="space-y-6">
+                                        ${module.questions.map((q, idx) => `
+                                            <div class="quiz-item">
+                                                <p class="text-sm font-medium text-gray-700 mb-2">${idx + 1}. ${q.q}</p>
+                                                <input type="text" 
+                                                    id="q-${idx}" 
+                                                    class="w-full px-4 py-2 rounded-lg border border-gray-200 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition-all text-sm"
+                                                    placeholder="Type answer here..."
+                                                    autocomplete="off">
+                                                <div id="feedback-${idx}" class="hidden mt-2 text-xs font-bold"></div>
+                                            </div>
+                                        `).join('')}
+                                    </div>
+
+                                    <div class="mt-8 pt-6 border-t border-gray-100">
+                                        <button onclick="app.checkAnswers(${id})" 
+                                            class="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold py-3 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all">
+                                            Check Answers
+                                        </button>
+                                        <div id="result-summary" class="mt-4 text-center text-sm font-medium hidden"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            },
+
+            checkAnswers(id) {
+                const module = grammarModules.find(m => m.id === id);
+                let correctCount = 0;
+
+                module.questions.forEach((q, idx) => {
+                    const input = document.getElementById(`q-${idx}`);
+                    const feedback = document.getElementById(`feedback-${idx}`);
+                    const userVal = input.value.trim().toLowerCase();
+                    const correctVal = q.a.toLowerCase();
+
+                    feedback.classList.remove('hidden', 'text-green-600', 'text-red-500');
+                    input.classList.remove('border-green-500', 'border-red-500', 'bg-green-50', 'bg-red-50');
+
+                    if (userVal === correctVal) {
+                        correctCount++;
+                        feedback.textContent = "Correct!";
+                        feedback.classList.add('text-green-600');
+                        input.classList.add('border-green-500', 'bg-green-50');
+                    } else {
+                        feedback.innerHTML = `Incorrect. Answer: <span class="text-gray-700">${q.a}</span>`;
+                        feedback.classList.add('text-red-500');
+                        input.classList.add('border-red-500', 'bg-red-50');
+                    }
+                });
+
+                const summary = document.getElementById('result-summary');
+                summary.textContent = `You got ${correctCount} out of ${module.questions.length} correct!`;
+                summary.classList.remove('hidden');
+                summary.className = `mt-4 text-center text-sm font-bold ${correctCount === module.questions.length ? 'text-green-600' : 'text-purple-600'}`;
+            }
+        };
+
+        // Initialize App
+        document.addEventListener('DOMContentLoaded', () => {
+            app.init();
+        });
+    </script>
+</body>
+</html>
